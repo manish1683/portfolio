@@ -9,6 +9,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 import secrets
 from werkzeug.utils import secure_filename
+import threading   # <-- ADDED for background email
 
 load_dotenv()
 
@@ -121,6 +122,14 @@ def login_required(f):
         return f(*args, **kwargs)
     return decorated
 
+# ---------- ASYNC EMAIL WRAPPER ----------
+def send_email_async(name, email, message):
+    """Wrapper to send email in background."""
+    try:
+        send_email_notification(name, email, message)
+    except Exception as e:
+        print(f"Background email error: {e}")
+
 # ---------- ROUTES ----------
 @app.route('/')
 def index():
@@ -129,10 +138,8 @@ def index():
 @app.route('/contact', methods=['POST'])
 def contact():
     try:
-        # Parse JSON data
         data = request.get_json()
         if data is None:
-            print("ERROR: No JSON data received or invalid Content-Type.")
             return jsonify({'status': 'error', 'message': 'Invalid JSON or missing Content-Type'}), 400
 
         name = data.get('name')
@@ -140,25 +147,20 @@ def contact():
         message = data.get('message')
 
         if not name or not email or not message:
-            print(f"ERROR: Missing fields – name={name}, email={email}, message={message}")
             return jsonify({'status': 'error', 'message': 'All fields required.'}), 400
 
-        # Save to database
+        # Save to database (fast)
         save_message(name, email, message)
-        print(f"Message saved from {name} ({email})")
 
-        # Send email (catch errors separately)
-        try:
-            send_email_notification(name, email, message)
-        except Exception as e:
-            print(f"Email error (but message saved): {e}")
+        # Send email in background – don't wait for it
+        threading.Thread(target=send_email_async, args=(name, email, message)).start()
 
         return jsonify({'status': 'success', 'message': 'Message saved! We\'ll get back to you.'})
 
     except Exception as e:
         print(f"ERROR in /contact: {e}")
         import traceback
-        traceback.print_exc()   # full stack trace in logs
+        traceback.print_exc()
         return jsonify({'status': 'error', 'message': 'Server error. Please try again.'}), 500
 
 # ---------- ADMIN LOGIN ----------
