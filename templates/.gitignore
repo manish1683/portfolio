@@ -1,0 +1,19 @@
+# Secrets & Database
+.env
+messages.db
+*.db
+
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Resume (if you want to keep it out of repo – optional)
+static/resume/resume.pdf

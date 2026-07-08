@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manish · Data Engineer Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Animated Orbs -->
+    <div class="orb"></div>
+    <div class="orb orb--bottom"></div>
+
+    <!-- ========== HEADER ========== -->
+    <header class="header" id="header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="#hero">
+                    <span>Munish Kumar</span>
+                    <span class="status-badge">
+                        <span class="status-dot"></span>
+                        Available for work
+                    </span>
+                </a>
+            </div>
+            <nav class="nav" id="nav">
+                <a href="#about" class="active">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="https://github.com" target="_blank" style="gap:6px;">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" aria-label="Toggle theme" style="background:none; border:none; color:var(--text-secondary); font-size:1.2rem; cursor:pointer; padding:0 12px;">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </nav>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left: content -->
+                <div class="hero-content">
+                    <p class="tagline">Data Engineer · ETL &amp; Telecom</p>
+                    <h1>
+                        Munish Kumar <br />
+                        <span class="highlight">builds pipelines</span><br />
+                        that don't drop packets.
+                    </h1>
+                    <p class="sub-tagline">
+                        I build the pipelines that keep telecom data flowing — Oracle SQL,
+                        Python, and ETL at CDR scale.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="/static/resume/resume.pdf" target="_blank" class="btn btn-outline">
+                            <i class="fas fa-file-pdf"></i> Resume
+                        </a>
+                        <a href="#projects" class="btn btn-primary">
+                            <i class="fas fa-code-branch"></i> View projects
+                        </a>
+                        <a href="#contact" class="btn btn-outline">
+                            <i class="fas fa-paper-plane"></i> Get in touch
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <span class="stat-number">2+</span>
+                            <span class="stat-label">years in data engineering</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">6</span>
+                            <span class="stat-label">SMSC vendor pipelines consolidated</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">175MB+</span>
+                            <span class="stat-label">CDR files processed per run</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">4</span>
+                            <span class="stat-label">Oracle servers operated across</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: avatar with floating badges (wrapped in hero-visual) -->
+                <div class="hero-visual">
+                    <div class="hero-avatar-ring">
+                        <div class="ring-orbits"></div>
+                        <div class="avatar">MK</div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="label">01 · about</div>
+                <h2>Signal in, structure out.</h2>
+                <p>Data Engineer with ~2 years of experience building ETL pipelines and automation for telecom-scale Call Detail Record (CDR) processing.</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I work daily with <strong>Oracle SQL</strong> and <strong>PL/SQL</strong>,
+                        <strong>Python</strong> automation (pandas, Polars, SQLAlchemy),
+                        <strong>PowerShell</strong>/batch scripting, and <strong>FTP/SFTP</strong>
+                        workflows that move millions of records between campaign managers,
+                        SMSC vendors, and DLT compliance platforms.
+                    </p>
+                    <p>
+                        I like turning slow, manual reporting into automated pipelines — and
+                        I'm on a structured path to go deeper into cloud data engineering
+                        (<strong>Airflow, Spark, cloud warehouses</strong>).
+                    </p>
+                    <div class="about-stats-compact">
+                        <div class="about-stat-item">
+                            <div class="num">2+</div>
+                            <div class="desc">years in data engineering</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="num">6</div>
+                            <div class="desc">SMSC vendor pipelines</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="num">175MB+</div>
+                            <div class="desc">CDR files processed / run</div>
+                        </div>
+                        <div class="about-stat-item">
+                            <div class="num">4</div>
+                            <div class="desc">Oracle servers operated</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p style="font-size:0.95rem; color:var(--text-muted); background:var(--bg-card); padding:20px 24px; border-radius:var(--radius-sm); border-left:3px solid var(--accent);">
+                        <i class="fas fa-quote-left" style="color:var(--accent); opacity:0.4; margin-right:8px;"></i>
+                        I turn slow, manual reporting into automated pipelines — and I'm on a structured
+                        path to go deeper into cloud data engineering.
+                    </p>
+                    <p style="margin-top:16px;">
+                        <strong>Education</strong><br />
+                        Master of Computer Applications (MCA) — Chandigarh University (2024)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="label">02 · experience</div>
+                <h2>Where the pipelines run.</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="date">2024 — Present</div>
+                    <div class="content">
+                        <h3>Data Engineer</h3>
+                        <span class="company">Satzilio Telecom Pvt. Ltd. (Smart Ping / Smartping AI) · Mohali, India</span>
+                        <ul>
+                            <li>Built and maintain ETL pipelines processing telecom CDRs at scale, including MERGE-based reconciliation of unknown-status records into production Oracle tables.</li>
+                            <li>Consolidate CDR data from six SMSC vendors (Sinch, Infobip, Airtel, and others) through a PL/SQL package into a unified ALL_SMSC table.</li>
+                            <li>Automated WABA Lens pricing reports, AIRTEL SMPP delivery reports, and Pinnacle reconciliation reports — replacing manual Excel work with Python (pandas, openpyxl, xlwings, win32com).</li>
+                            <li>Built a Streamlit / tkinter tool to split and process 175MB+ raw CDR files for downstream reporting.</li>
+                            <li>Wrote PowerShell and batch scripts to automate FTP/SFTP transfers across Oracle servers, debugging race conditions in shared command files.</li>
+                            <li>Built a SPARK Prepaid Payment pipeline and balance reporting system, moving from Polars/DuckDB to pandas/numpy for compatibility.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" style="opacity:0.6; pointer-events:none;">
+                    <div class="date">2023 — 2024</div>
+                    <div class="content">
+                        <h3>Data Engineering Intern</h3>
+                        <span class="company">Satzilio Telecom Pvt. Ltd. · Mohali, India</span>
+                        <ul>
+                            <li>Assisted in building ETL pipelines and automation scripts for CDR processing.</li>
+                            <li>Gained hands-on experience with Oracle SQL, PL/SQL, and Python automation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="section" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="label">03 · stack</div>
+                <h2>The layers I work in.</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="cat-title"><i class="fas fa-database"></i> Databases &amp; Query</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag highlight">Oracle SQL</span>
+                        <span class="skill-tag">PL/SQL</span>
+                        <span class="skill-tag">SQL*Loader</span>
+                        <span class="skill-tag">DB Links</span>
+                        <span class="skill-tag">Window Functions</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="cat-title"><i class="fab fa-python"></i> Python &amp; Automation</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag highlight">pandas</span>
+                        <span class="skill-tag">Polars</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">SQLAlchemy</span>
+                        <span class="skill-tag">oracledb</span>
+                        <span class="skill-tag">paramiko</span>
+                        <span class="skill-tag">openpyxl</span>
+                        <span class="skill-tag">win32com</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="cat-title"><i class="fas fa-code-branch"></i> Pipelines &amp; Reporting</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag highlight">ETL Design</span>
+                        <span class="skill-tag">CDR Processing</span>
+                        <span class="skill-tag">Streamlit</span>
+                        <span class="skill-tag">DuckDB</span>
+                        <span class="skill-tag">Excel Automation</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <div class="cat-title"><i class="fas fa-terminal"></i> Ops &amp; Scripting</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PowerShell</span>
+                        <span class="skill-tag">Batch Scripting</span>
+                        <span class="skill-tag">FTP / SFTP</span>
+                        <span class="skill-tag">Windows Server Automation</span>
+                    </div>
+                </div>
+                <div class="skill-category" style="grid-column: 1 / -1;">
+                    <div class="cat-title"><i class="fas fa-graduation-cap"></i> Currently Learning</div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache Airflow</span>
+                        <span class="skill-tag">PySpark</span>
+                        <span class="skill-tag">Azure Data Factory</span>
+                        <span class="skill-tag">Databricks</span>
+                        <span class="skill-tag">Cloud Warehousing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <div class="label">04 · projects</div>
+                <h2>Pipelines, end to end.</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-icon"><i class="fas fa-file-excel"></i></span>
+                    <h3>WABA Lens Pricing Report Automation</h3>
+                    <p>Automated a WhatsApp Business API pricing report that queries Oracle directly and builds a pivot-structured workbook (TP_DATA, BSP, TP_Summary, BSP_Summary) using openpyxl and xlwings, replacing hours of manual spreadsheet work.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>SQLAlchemy</span><span>Oracle</span><span>openpyxl</span><span>xlwings</span>
+                    </div>
+                    <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon"><i class="fas fa-server"></i></span>
+                    <h3>Multi-Vendor SMSC CDR Consolidation</h3>
+                    <p>Debugged and extended a PL/SQL package (smsc_delivered_pkg_52) that merges delivery data from six carrier routes — including Sinch, Infobip, and Airtel — into a single source of truth table.</p>
+                    <div class="tech-stack">
+                        <span>PL/SQL</span><span>Oracle</span><span>MERGE</span><span>Telecom CDR</span>
+                    </div>
+                    <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon"><i class="fas fa-cut"></i></span>
+                    <h3>Large CDR File Splitter</h3>
+                    <p>A desktop and web tool (tkinter + Streamlit interfaces) that splits massive CDR CSV exports into manageable chunks for downstream client reporting, with a path toward public hosting.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>Streamlit</span><span>tkinter</span><span>pandas</span>
+                    </div>
+                    <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon"><i class="fas fa-envelope"></i></span>
+                    <h3>AIRTEL SMPP PSU Delivery Reports</h3>
+                    <p>Built category-wise delivery reports rendered as inline-CSS HTML tables, tuned to render correctly across both Outlook and Gmail for daily stakeholder emails.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>HTML/CSS</span><span>Reporting Automation</span>
+                    </div>
+                    <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon"><i class="fas fa-credit-card"></i></span>
+                    <h3>SPARK Prepaid Payment Pipeline</h3>
+                    <p>Built a prepaid payment balance pipeline, first with Polars and DuckDB, then rewritten in pure pandas/numpy after a Python 3.14 compatibility issue — a good lesson in pragmatic engineering.</p>
+                    <div class="tech-stack">
+                        <span>Python</span><span>Polars</span><span>DuckDB</span><span>pandas</span>
+                    </div>
+                    <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-card">
+                    <span class="project-icon"><i class="fas fa-bolt"></i></span>
+                    <h3>Skill-to-Job Mapper</h3>
+                    <p>A side project web app that maps a user's skills against job requirements, built with React, Node.js, and Docker — a step outside the telecom stack to broaden full-stack range.</p>
+                    <div class="tech-stack">
+                        <span>React</span><span>Node.js</span><span>Docker</span>
+                    </div>
+                    <a href="#" class="project-link">View project <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="label">05 · contact</div>
+                <h2>Let's build something that scales.</h2>
+                <p>Open to Data Engineer roles in Mohali, Gurgaon, or remote. Reach out below.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in touch</h3>
+                    <p>I'm always open to interesting conversations and opportunities.</p>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="info">
+                            <span class="label">Email</span>
+                            <span class="value">manishk162001@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="info">
+                            <span class="label">Location</span>
+                            <span class="value">Mohali, India</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-briefcase"></i>
+                        <div class="info">
+                            <span class="label">Open to</span>
+                            <span class="value">Data Engineer roles · Remote / Mohali / Gurgaon</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.linkedin.com/in/manish-kumar-290b45129" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/manish1683" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:manishk162001@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div style="background:var(--bg-card); border-radius:var(--radius); padding:32px; border:1px solid rgba(255,255,255,0.04);">
+                    <form id="contactForm">
+                        <div style="display:flex; flex-direction:column; gap:16px;">
+                            <input type="text" name="name" placeholder="Your Name" required style="background:var(--bg-primary); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:12px 16px; color:var(--text-primary); font-family:var(--font);">
+                            <input type="email" name="email" placeholder="Your Email" required style="background:var(--bg-primary); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:12px 16px; color:var(--text-primary); font-family:var(--font);">
+                            <textarea name="message" placeholder="Your Message" rows="4" required style="background:var(--bg-primary); border:1px solid rgba(255,255,255,0.06); border-radius:8px; padding:12px 16px; color:var(--text-primary); font-family:var(--font); resize:vertical;"></textarea>
+                            <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send Message</button>
+                        </div>
+                        <div id="formFeedback" style="margin-top:12px; color:var(--accent); font-size:0.9rem;"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Left: Brand & Status -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <span>Manish Kumar</span>
+                    <span class="status-badge footer-status">
+                        <span class="status-dot"></span>
+                        Available for work
+                    </span>
+                </div>
+                <p class="footer-tagline">
+                    Data Engineer · ETL &amp; Telecom · CDR pipelines at scale
+                </p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/manish-kumar-290b45129" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/manish1683" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:manishk162001@gmail.com" aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Middle: Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Right: Tech & Credits -->
+            <div class="footer-tech">
+                <h4>Built With</h4>
+                <div class="tech-pills">
+                    <span>Python</span>
+                    <span>Flask</span>
+                    <span>SQLite</span>
+                    <span>Space Grotesk</span>
+                </div>
+                <div class="footer-credit">
+                    <p>
+                        © 2026 Manish Kumar.
+                        <span class="footer-heart">♥</span>
+                        &nbsp;with passion.
+                    </p>
+                    <p class="footer-version">v2.0 · Live</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Bottom Bar with scroll‑to‑top -->
+        <div class="footer-bottom">
+            <p>
+                ✨ Built from scratch with Python, Flask &amp; a lot of coffee.
+                <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </p>
+        </div>
+    </div>
+</footer>
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

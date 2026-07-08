@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Resume · Admin</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 40px 35px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 { margin-bottom: 8px; }
+        .status { color: #6b738b; margin-bottom: 25px; }
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 5px;
+        }
+        .btn-primary { background: #00f0c0; color: #0b0d15; }
+        .btn-danger { background: #ff6b6b; color: white; }
+        .btn-secondary { background: #e8ecf3; color: #1a1d2b; }
+        input[type="file"] { margin: 15px 0; }
+        .back-link { display: block; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📄 Resume Manager</h1>
+        <p class="status">
+            {% if resume_exists %}
+                ✅ Current resume is uploaded.
+            {% else %}
+                ❌ No resume uploaded yet.
+            {% endif %}
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf" required>
+            <br>
+            <button type="submit" class="btn btn-primary">Upload / Replace</button>
+        </form>
+
+        {% if resume_exists %}
+        <form method="POST" action="/admin/resume/delete" style="display:inline;">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Delete the current resume?');">Delete Resume</button>
+        </form>
+        {% endif %}
+
+        <a href="/admin" class="back-link btn btn-secondary">← Back to Dashboard</a>
+    </div>
+</body>
+</html>
